@@ -1,11 +1,11 @@
 const chalk = require('chalk');
 const _ = require('lodash');
-
+const logs = require('./data/logs.json');
 const logger = require('./lib/logger.js');
 
 
-_.each([{ 'a':'Hello World', 'b':'INFO' }, { 'a':'Hello World', 'b':'WARNING' }, { 'a':'Hello World', 'b':'ERROR' }], function (x) {
-  logger(x.a, x.b);
+_.each(logs, function (x) {
+  logger(x.level, x.message);
 })
 
 
